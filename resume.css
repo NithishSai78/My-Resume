@@ -1,0 +1,284 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #e8e6e3;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #292c3f;
+    font-size: 9px;
+    line-height: 1.3;
+}
+
+/* ================= A4 PAGE ================= */
+
+.resume {
+    width: 210mm;
+    height: 297mm;
+    margin: 20px auto;
+    background: #ffffff;
+    overflow: hidden;
+    position: relative;
+}
+
+/* ================= HEADER ================= */
+
+.header {
+    height: 67mm;
+    position: relative;
+
+    background: #eee5e2;
+
+    padding: 9mm 12mm;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+/* Diagonal white shape */
+
+.header::after {
+    content: "";
+
+    position: absolute;
+    left: -5%;
+    bottom: -28px;
+
+    width: 110%;
+    height: 60px;
+
+    background: white;
+
+    transform: rotate(5deg);
+}
+
+/* ================= NAME ================= */
+
+.header-text {
+    position: relative;
+    z-index: 5;
+}
+
+.header h1 {
+    font-size: 31px;
+    line-height: 0.95;
+    letter-spacing: 1px;
+    color: #111111;
+    font-weight: 800;
+}
+
+.header h2 {
+    margin-top: 10px;
+
+    font-size: 11px;
+    line-height: 1.3;
+
+    letter-spacing: 1.5px;
+
+    color: #292c55;
+
+    font-weight: 700;
+}
+
+/* ================= PHOTO ================= */
+
+.profile-image {
+    width: 53mm;
+    height: 53mm;
+
+    border-radius: 50%;
+    overflow: hidden;
+
+    position: absolute;
+
+    right: 12mm;
+    top: 6mm;
+
+    z-index: 4;
+
+    background: #d8ccb9;
+}
+
+.profile-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ================= CONTENT ================= */
+
+.content {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 13mm;
+
+    padding: 8mm 12mm 5mm;
+}
+
+/* ================= COLUMNS ================= */
+
+.left-column,
+.right-column {
+    min-width: 0;
+}
+
+/* ================= SECTIONS ================= */
+
+.section {
+    margin-bottom: 5mm;
+}
+
+/* ================= HEADINGS ================= */
+
+.section h3 {
+    font-size: 17px;
+
+    letter-spacing: 1.2px;
+
+    color: #161616;
+
+    margin-bottom: 2.5mm;
+
+    font-weight: 800;
+}
+
+/* ================= TEXT ================= */
+
+.section p {
+    font-size: 9.2px;
+
+    color: #44485a;
+
+    line-height: 1.42;
+
+    margin-bottom: 2px;
+}
+
+/* ================= ITEMS ================= */
+
+.item {
+    margin-bottom: 3.5mm;
+}
+
+.item h4 {
+    font-size: 10.5px;
+
+    line-height: 1.3;
+
+    color: #171717;
+
+    font-weight: 700;
+
+    margin-bottom: 1px;
+}
+
+.item .sub {
+    font-size: 9px;
+
+    color: #777777;
+
+    margin-bottom: 2px;
+}
+
+/* ================= LIST ================= */
+
+ul {
+    padding-left: 14px;
+}
+
+li {
+    font-size: 8.8px;
+
+    color: #44485a;
+
+    margin-bottom: 1.5px;
+
+    line-height: 1.3;
+}
+
+/* ================= TECH ================= */
+
+.tech {
+    color: #292c55 !important;
+
+    font-size: 8px !important;
+
+    font-weight: 600;
+
+    margin-top: 2px;
+}
+
+/* ================= LANGUAGES ================= */
+
+.language-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.language-list li {
+    margin-bottom: 2px;
+}
+
+/* ================= CONTACT ================= */
+
+.contact-section p {
+    margin-bottom: 2px;
+}
+
+/* ================= PRINT ================= */
+
+@page {
+    size: A4 portrait;
+    margin: 0;
+}
+
+@media print {
+
+    html,
+    body {
+        width: 210mm;
+        height: 297mm;
+        margin: 0;
+        padding: 0;
+        background: white;
+    }
+
+    .resume {
+        width: 210mm;
+        height: 297mm;
+
+        margin: 0;
+        padding: 0;
+
+        overflow: hidden;
+
+        box-shadow: none;
+
+        page-break-after: avoid;
+        page-break-before: avoid;
+    }
+
+    .header {
+        height: 67mm;
+    }
+
+    .content {
+        padding: 8mm 12mm 5mm;
+    }
+
+    .section {
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+}
